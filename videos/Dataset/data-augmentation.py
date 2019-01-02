@@ -7,9 +7,9 @@ ia.seed(44)
 
 def main():
     for i in range(1, 191):
-        draw_single_sequential_images(str(i), "others", "others-aug")
+        draw_single_sequential_images(str(i), "Others", "Others-aug")
     for i in range(1, 191):
-        draw_single_sequential_images(str(i), "hits", "hits-aug")
+        draw_single_sequential_images(str(i), "Punches", "Punches-aug")
     for i in range(1, 191):
         draw_single_sequential_images(str(i), "kicks", "kicks-aug")
 
