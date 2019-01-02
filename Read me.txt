@@ -1,0 +1,13 @@
+how it work
+- with your camera take few viedos of punches and kicks
+- if ffmpeg is not installed run sudo apt install ffmpeg
+- run ffmpeg -i video.mov $filename%03d.jpg
+#where video.mov is the name an extension of your videos. 
+#this will take couple frame (pictures) of the videos and,
+#you'll have your starting dataset
+#after you have all this picks you need to classify them in folders
+ *Kicks
+ *Punches
+ *Others(where you're not doing anything or controling the recording etc..) 
+- run python3 rename.py
+#now we need to rename the files inside folders for convenience purpose.
