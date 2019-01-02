@@ -15,7 +15,6 @@ def main():
         draw_single_sequential_images(str(i), "kicks", "kicks-aug")
 
 def draw_single_sequential_images(filename, path, aug_path):
-	print ("loading...")
     image = misc.imresize(ndimage.imread(path + "/" + filename + ".jpg"), (56, 100))
     sometimes = lambda aug: iaa.Sometimes(0.5, aug)
     seq = iaa.Sequential(
