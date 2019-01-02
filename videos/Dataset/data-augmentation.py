@@ -1,6 +1,7 @@
 import imgaug as ia
 from imgaug import augmenters as iaa
 import numpy as np
+from scipy import misc
 
 np.random.seed(44)
 ia.seed(44)
