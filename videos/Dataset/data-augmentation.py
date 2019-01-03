@@ -61,7 +61,7 @@ def draw_single_sequential_images(filename, path, aug_path):
         random_order=True
     )
 
-    im = np.zeros((16, 56, 100, 3), dtype=np.uint8)
+    im = np.zeros((16, 100, 56,  3), dtype=np.uint8)
     for c in range(0, 16):
         im[c] = image
 
