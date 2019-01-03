@@ -65,8 +65,9 @@ def draw_single_sequential_images(filename, path, aug_path):
     for c in range(0, 16):
         im[c] = image
 
-    for im in range(len(grid)):
-        cv.imwrite(aug_path + "/" + filename + "_" + str(im) + ".jpg", grid[im])
+    for i in range(len(im)):
+        cv.imwrite(aug_path + "/" + filename + "_" + str(i) + ".jpg", im[i])
+
 def main():
     print ("loading...")
     for i in range(1, 191):
