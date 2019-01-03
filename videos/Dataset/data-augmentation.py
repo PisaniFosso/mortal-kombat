@@ -77,4 +77,3 @@ def draw_single_sequential_images(filename, path, aug_path):
     for im in range(len(grid)):
         cv2.imwrite(aug_path + "/" + filename + "_" + str(im) + ".jpg", grid[im])
 
-main()
