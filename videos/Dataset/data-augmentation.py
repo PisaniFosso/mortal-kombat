@@ -1,14 +1,13 @@
 import imgaug as ia
 from imgaug import augmenters as iaa
 import numpy as np
-import scipy.misc
-import scipy.ndimage
-
+import cv2
 
 np.random.seed(44)
 ia.seed(44)
 
 def main():
+    print ("loading...")
     for i in range(1, 191):
         draw_single_sequential_images(str(i), "Others", "Others-aug")
     for i in range(1, 191):
@@ -17,8 +16,7 @@ def main():
         draw_single_sequential_images(str(i), "kicks", "kicks-aug")
 
 def draw_single_sequential_images(filename, path, aug_path):
-	print ("loading...")
-    image = scipy.misc.imresize(scipy.ndimage.imread(path + "/" + filename + ".jpg"), (56, 100))
+    image = cv.Resize(cv2.imread(path + "/" + filename + ".jpg"), (56, 100))
     sometimes = lambda aug: iaa.Sometimes(0.5, aug)
     seq = iaa.Sequential(
         [
@@ -77,4 +75,6 @@ def draw_single_sequential_images(filename, path, aug_path):
         im[c] = image
 
     for im in range(len(grid)):
-        scipy.misc.imsave(aug_path + "/" + filename + "_" + str(im) + ".jpg", grid[im])
+        cv2.imwrite(aug_path + "/" + filename + "_" + str(im) + ".jpg", grid[im])
+
+main()
