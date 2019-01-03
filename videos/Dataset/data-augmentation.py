@@ -78,5 +78,8 @@ def main():
     print ("loading kicks...")
     for i in range(0, 185):
         draw_single_sequential_images(str(i), "kicks", "kicks-aug")
+    print ("finished")
+
+
 main()
 
