@@ -69,11 +69,13 @@ def draw_single_sequential_images(filename, path, aug_path):
         cv.imwrite(aug_path + "/" + filename + "_" + str(i) + ".jpg", im[i])
 
 def main():
-    print ("loading...")
+    print ("loading Others...")
     for i in range(0, 185):
         draw_single_sequential_images(str(i), "Others", "Others-aug")
+    print ("loading Punches...")
     for i in range(0, 185):
         draw_single_sequential_images(str(i), "Punches", "Punches-aug")
+    print ("loading kicks...")
     for i in range(0, 185):
         draw_single_sequential_images(str(i), "kicks", "kicks-aug")
 main()
