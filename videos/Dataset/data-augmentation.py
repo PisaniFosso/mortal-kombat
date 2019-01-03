@@ -15,12 +15,17 @@ np.random.seed(44)
 ia.seed(44)
 
 def main():
-    for i in range(1, 191):
+	print ("Loading Others...")
+    for i in range(0, 185):
         draw_single_sequential_images(str(i), "Others", "Others-aug")
-    for i in range(1, 191):
+	print ("Loading Punches...")
+    for i in range(0, 185):
         draw_single_sequential_images(str(i), "Punches", "Punches-aug")
-    for i in range(1, 191):
-        draw_single_sequential_images(str(i), "kicks", "kicks-aug")
+	print ("Loading kicks...")
+    for i in range(0, 185):
+        draw_single_sequential_images(str(i), "Kicks", "Kicks-aug")
+	print ("Finished")
+
 
 def draw_single_sequential_images(filename, path, aug_path):
 	image = misc.imresize(ndimage.imread(path + "/" + filename + ".jpg"), (56, 100))
@@ -77,8 +82,11 @@ def draw_single_sequential_images(filename, path, aug_path):
 	    random_order=True
 	)
 
-	grid = seq.draw_grid(image, cols=8, rows=8)
-    misc.imsave(aug_path + "/" + filename + "_" + str(im) + ".jpg", grid)
+	for im in range(len(grid)):
+        misc.imsave(aug_path + "/" + filename + "_" + str(im) + ".jpg", grid[im])
+
+	# grid = seq.draw_grid(image, cols=8, rows=8)
+ #    misc.imsave(aug_path + "/" + filename + "_" + str(im) + ".jpg", grid)
 
 if __name__ == "__main__":
     main()
