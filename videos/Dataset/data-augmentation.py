@@ -7,7 +7,7 @@ np.random.seed(44)
 ia.seed(44)
 
 def draw_single_sequential_images(filename, path, aug_path):
-    image = cv.resize(cv.imread(path + "/" + filename + ".jpg"), (56, 100))
+    image = cv.resize(cv.imread(path + "/" + filename + ".jpg"), (100, 56))
     sometimes = lambda aug: iaa.Sometimes(0.5, aug)
     seq = iaa.Sequential(
         [
