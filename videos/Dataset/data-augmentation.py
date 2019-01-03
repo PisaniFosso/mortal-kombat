@@ -70,11 +70,11 @@ def draw_single_sequential_images(filename, path, aug_path):
 
 def main():
     print ("loading...")
-    for i in range(1, 191):
+    for i in range(0, 185):
         draw_single_sequential_images(str(i), "Others", "Others-aug")
-    for i in range(1, 191):
+    for i in range(0, 185):
         draw_single_sequential_images(str(i), "Punches", "Punches-aug")
-    for i in range(1, 191):
+    for i in range(0, 185):
         draw_single_sequential_images(str(i), "kicks", "kicks-aug")
 main()
 
