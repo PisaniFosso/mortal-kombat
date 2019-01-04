@@ -14,6 +14,17 @@ import six.moves as sm
 np.random.seed(44)
 ia.seed(44)
 
+def main():
+	print ("Loading Others...")
+	for i in range(0, 185):
+		draw_single_sequential_images(str(i), "Others", "Others-aug")
+	print ("Loading Punches...")
+	for i in range(0, 185):
+		draw_single_sequential_images(str(i), "Punches", "Punches-aug")
+	print ("Loading kicks...")
+	for i in range(0, 185):
+		draw_single_sequential_images(str(i), "Kicks", "Kicks-aug")
+	print ("Finished")
 
 def draw_single_sequential_images(filename, path, aug_path):
 	image = misc.imresize(ndimage.imread(path + "/" + filename + ".jpg"), (100, 56))
@@ -75,18 +86,6 @@ def draw_single_sequential_images(filename, path, aug_path):
 
 	for i, image_aug in enumerate(images_aug):
 		misc.imsave(aug_path + "/" + filename + "_" + str(i) + ".jpg", images_aug)
-
-def main():
-	print ("Loading Others...")
-	for i in range(0, 185):
-		draw_single_sequential_images(str(i), "Others", "Others-aug")
-	print ("Loading Punches...")
-	for i in range(0, 185):
-		draw_single_sequential_images(str(i), "Punches", "Punches-aug")
-	print ("Loading kicks...")
-	for i in range(0, 185):
-		draw_single_sequential_images(str(i), "Kicks", "Kicks-aug")
-	print ("Finished")
 
 
 
