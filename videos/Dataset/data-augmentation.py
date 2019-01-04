@@ -72,18 +72,14 @@ def draw_single_sequential_images(filename, path, aug_path):
 	    random_order=True
 	)
 
-	im = np.zeros((16, 56, 100, 3), dtype=np.uint8)
-    for c in range(0, 16):
-        im[c] = seq.draw_grid(image, cols=8, rows=8)
+	n = 16
+	images_aug = seq.augment_images([image] * n)
 
-    for i in range(len(grid)):
-        misc.imsave(aug_path + "/" + filename + "_" + str(im) + ".jpg", im[i])
+	for i, image_aug in enumerate(images_aug):
+    misc.imsave(aug_path + "/" + filename + "_" + str(im) + ".jpg", images_aug)
 
 def main():
 	print ("Loading Others...")
-    for i in range(0, 185):
-        draw_single_sequential_images(str(i), "Others", "Others-aug")
-	print ("Loading Punches...")
     for i in range(0, 185):
         draw_single_sequential_images(str(i), "Punches", "Punches-aug")
 	print ("Loading kicks...")
