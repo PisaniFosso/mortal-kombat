@@ -1,15 +1,10 @@
 from __future__ import print_function, division
 import imgaug as ia
 from imgaug import augmenters as iaa
-import parameters as iap
 #from skimage import
 import numpy as np
 from scipy import ndimage, misc
-from skimage import data
-import matplotlib.pyplot as plt
-from matplotlib import gridspec
-import six
-import six.moves as sm
+
 
 np.random.seed(44)
 ia.seed(44)
