@@ -16,6 +16,8 @@ ia.seed(44)
 
 def main():
 	print ("Loading Others...")
+	for i in range(0, 185):
+        draw_single_sequential_images(str(i), "Others", "Others-aug")
     for i in range(0, 185):
         draw_single_sequential_images(str(i), "Punches", "Punches-aug")
 	print ("Loading kicks...")
