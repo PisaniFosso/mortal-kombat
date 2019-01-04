@@ -81,7 +81,7 @@ def main():
 	for i in range(0, 185):
 		draw_single_sequential_images(str(i), "Others", "Others-aug")
 	print ("Loading Punches...")
-    for i in range(0, 185):
+	for i in range(0, 185):
     	draw_single_sequential_images(str(i), "Punches", "Punches-aug")
     print ("Loading kicks...")
     for i in range(0, 185):
