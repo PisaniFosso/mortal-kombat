@@ -22,7 +22,7 @@ def main():
 	print ("Finished")
 
 def draw_single_sequential_images(filename, path, aug_path):
-	image = misc.imresize(ndimage.imread(path + "/" + filename + ".jpg"), (100, 56, 3))
+	image = misc.imresize(ndimage.imread(path + "/" + filename + ".jpg"), (100, 56))
 	sometimes = lambda aug: iaa.Sometimes(0.5, aug)
 	seq = iaa.Sequential(
 	    [
@@ -80,7 +80,7 @@ def draw_single_sequential_images(filename, path, aug_path):
 	images_aug = seq.augment_images([image] * n)
 
 	for i, image_aug in enumerate(images_aug):
-		misc.imsave(aug_path + "/" + filename + "_%04d.jpg"  % (i,), images_aug)
+		misc.imsave(aug_path + "/" + filename + "_" + str(i) + ".jpg", image_aug)
 
 
 
