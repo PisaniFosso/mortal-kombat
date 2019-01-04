@@ -16,7 +16,7 @@ ia.seed(44)
 
 
 def draw_single_sequential_images(filename, path, aug_path):
-	image = misc.imresize(ndimage.imread(path + "/" + filename + ".jpg"), (56, 100))
+	image = misc.imresize(ndimage.imread(path + "/" + filename + ".jpg"), (100, 56))
 	sometimes = lambda aug: iaa.Sometimes(0.5, aug)
 	seq = iaa.Sequential(
 	    [
@@ -80,6 +80,7 @@ def main():
 	print ("Loading Others...")
 	for i in range(0, 185):
         draw_single_sequential_images(str(i), "Others", "Others-aug")
+	print ("Loading Punches...")
     for i in range(0, 185):
         draw_single_sequential_images(str(i), "Punches", "Punches-aug")
 	print ("Loading kicks...")
@@ -87,7 +88,7 @@ def main():
         draw_single_sequential_images(str(i), "Kicks", "Kicks-aug")
 	print ("Finished")
 
-	
+
 
 if __name__ == "__main__":
     main()
