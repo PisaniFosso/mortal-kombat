@@ -1,4 +1,4 @@
-how it work
+how to create your own
 - with your camera take few viedos of punches and kicks
 - if ffmpeg is not installed run sudo apt install ffmpeg
 - run ffmpeg -i video.mov $filename%03d.jpg
@@ -11,3 +11,7 @@ how it work
  *Others(where you're not doing anything or controling the recording etc..) 
 - run python3 rename.py
 #now we need to rename the files inside folders for convenience purpose.
+- run pip3 install six numpy scipy Pillow matplotlib scikit-image opencv-python imageio Shapely
+- run pip3 install imgaug
+- run python3 data-augmentation.py
+
