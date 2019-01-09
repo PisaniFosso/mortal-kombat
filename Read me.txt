@@ -8,7 +8,7 @@ how to create your own
 #after you have all this picks you need to classify them in folders
  *Kicks
  *Punches
- *Others(where you're not doing anything or controling the recording etc..) 
+ *Others(where you're not doing anything or controling the recording etc...) 
 - run python3 rename.py
 #now we need to rename the files inside folders for convenience purpose.
 - run pip3 install six numpy scipy Pillow matplotlib scikit-image opencv-python imageio Shapely
